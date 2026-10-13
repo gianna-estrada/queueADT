@@ -6,6 +6,8 @@ public class PrintServer {
 	
 	static Scanner in = new Scanner(System.in);
 	
+	static final int MAX_MEMBERS = 5;
+	
 	public static void displayMenu() {
 		System.out.println("Welcome to PrintServer! Please select a number from the list.");
 		System.out.println("1.   Enqueue a job");
@@ -37,7 +39,7 @@ public class PrintServer {
 					System.out.print("Number of pages: ");
 					String num_pages = in.nextLine();
 					
-					String[] members = new String[5];
+					String[] members = new String[MAX_MEMBERS];
 					System.out.print("Number of members (max. 5): ");
 					int num_members = in.nextInt();
 					
@@ -68,7 +70,8 @@ public class PrintServer {
 					break;
 				}
 				case 5: {
-					System.out.println("Placeholder text");
+					queue.displayQueue();
+					System.out.println();
 					System.out.println();
 					break;
 				}

@@ -64,4 +64,12 @@ public class QueueArrayBased {
 	                              "Queue empty");
 	    }  // end if
 	  }  // end peek
+	  
+	  public void displayQueue() {
+		  System.out.print("Front -> | ");
+		  for (int i = front; i <= back; i++) {
+			  System.out.print(items[i] + " | ");
+		  }
+		  System.out.print("<- Back");
+	  }
 }
