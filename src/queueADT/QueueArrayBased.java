@@ -67,8 +67,23 @@ public class QueueArrayBased {
 	  
 	  public void displayQueue() {
 		  System.out.print("Front -> | ");
-		  for (int i = front; i <= back; i++) {
-			  System.out.print(items[i] + " | ");
+		  // Since the queue is circular, check if
+		  // the back is at an index less than front
+		  if (front > back) {
+			  // Print from front until the end of the array
+			  for (int i = front; i <= MAX_QUEUE-1; i++) {
+				  System.out.print(items[i] + " | ");
+			  }
+			  // Then print from index 0 to back
+			  for (int i = 0; i <= back; i++) {
+				  System.out.print(items[i] + " | ");
+			  }
+		  }
+		  // Otherwise, print the array with a regular loop
+		  else {
+			  for (int i = front; i <= back; i++) {
+				  System.out.print(items[i] + " | ");
+			  }
 		  }
 		  System.out.print("<- Back");
 	  }
